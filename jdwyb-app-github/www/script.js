@@ -149,7 +149,7 @@ async function callAIAPI(message) {
                 'Authorization': `Bearer ${API_KEY}`
             },
             body: JSON.stringify({
-                model: 'ep-20250510143011-6z4q2',
+                model: 'model: 'ep-20260510195148-xp4v4',
                 messages: [
                     {
                         role: 'system',
