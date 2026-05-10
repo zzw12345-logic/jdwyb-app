@@ -26,20 +26,24 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+      working-directory: ./jdwyb-app-github
 
     - name: Sync Capacitor
       run: npx cap sync android
+      working-directory: ./jdwyb-app-github
 
     - name: Grant execute permission for gradlew
       run: chmod +x android/gradlew
+      working-directory: ./jdwyb-app-github
 
     - name: Build APK
       run: |
         cd android
         ./gradlew assembleDebug
+      working-directory: ./jdwyb-app-github
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: jdwyb-app-debug
-        path: android/app/build/outputs/apk/debug/app-debug.apk
+        path: jdwyb-app-github/android/app/build/outputs/apk/debug/app-debug.apk
