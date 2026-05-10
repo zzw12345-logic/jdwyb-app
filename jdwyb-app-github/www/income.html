@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收入预测 - 接单无忧宝</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><i class="fas fa-shield-alt"></i><span>接单无忧宝</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="features.html">核心功能</a></li>
+                <li><a href="income.html" class="active">收入预测</a></li>
+                <li><a href="insurance.html">保险保障</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+            <div class="nav-buttons" id="navButtons">
+                <button class="btn btn-outline" id="btnLogin">登录</button>
+                <button class="btn btn-primary" id="btnRegister">免费注册</button>
+            </div>
+            <div class="nav-user" id="navUser" style="display:none;">
+                <div class="user-avatar" id="userAvatar"><i class="fas fa-user"></i></div>
+                <span class="user-name" id="userName"></span>
+                <button class="btn btn-outline btn-sm" id="btnLogout"><i class="fas fa-sign-out-alt"></i> 退出</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-tag">收入预测</span>
+            <h1>智能预测，让收入更稳定</h1>
+            <p>通过大数据分析，提前预测收入波动，帮助你合理安排工作时间</p>
+        </div>
+    </section>
+
+    <!-- AI预测原理 -->
+    <section class="detail-section">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-content">
+                    <h2><i class="fas fa-brain"></i> AI预测模型</h2>
+                    <p>我们的AI预测模型基于机器学习算法，综合分析多种因素，预测准确率达78%。</p>
+                    
+                    <div class="tech-features">
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="fas fa-database"></i></div>
+                            <div class="tech-text">
+                                <h4>历史数据分析</h4>
+                                <p>分析您过去30天、90天、180天的收入数据，识别收入规律</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="fas fa-cloud-sun"></i></div>
+                            <div class="tech-text">
+                                <h4>天气因素整合</h4>
+                                <p>接入气象数据，分析降雨、高温、台风等对收入的影响</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="fas fa-calendar-check"></i></div>
+                            <div class="tech-text">
+                                <h4>节假日预测</h4>
+                                <p>结合节假日、周末、特殊活动，预测订单量波动</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon"><i class="fas fa-map-marked-alt"></i></div>
+                            <div class="tech-text">
+                                <h4>区域热度分析</h4>
+                                <p>实时监测各商圈订单热度，推荐最优接单区域</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-visual">
+                    <div class="prediction-demo">
+                        <div class="demo-header">
+                            <span>收入预测演示</span>
+                            <span class="accuracy">准确率 78%</span>
+                        </div>
+                        <div class="demo-chart">
+                            <div class="chart-row">
+                                <span class="chart-label">周一</span>
+                                <div class="chart-bar-wrap">
+                                    <div class="chart-bar" style="width:65%"><span>¥285</span></div>
+                                </div>
+                            </div>
+                            <div class="chart-row">
+                                <span class="chart-label">周二</span>
+                                <div class="chart-bar-wrap">
+                                    <div class="chart-bar" style="width:70%"><span>¥312</span></div>
+                                </div>
+                            </div>
+                            <div class="chart-row">
+                                <span class="chart-label">周三</span>
+                                <div class="chart-bar-wrap">
+                                    <div class="chart-bar" style="width:55%"><span>¥238</span></div>
+                                </div>
+                            </div>
+                            <div class="chart-row">
+                                <span class="chart-label">周四</span>
+                                <div class="chart-bar-wrap">
+                                    <div class="chart-bar" style="width:80%"><span>¥356</span></div>
+                                </div>
+                            </div>
+                            <div class="chart-row">
+                                <span class="chart-label">周五</span>
+                                <div class="chart-bar-wrap">
+                                    <div class="chart-bar" style="width:90%"><span>¥398</span></div>
+                                </div>
+                            </div>
+                            <div class="chart-row highlight">
+                                <span class="chart-label">周六</span>
+                                <div class="chart-bar-wrap">
+                                    <div class="chart-bar predicted" style="width:95%"><span>¥420</span></div>
+                                </div>
+                                <span class="predict-tag">预测</span>
+                            </div>
+                            <div class="chart-row">
+                                <span class="chart-label">周日</span>
+                                <div class="chart-bar-wrap">
+                                    <div class="chart-bar predicted" style="width:75%"><span>¥335</span></div>
+                                </div>
+                                <span class="predict-tag">预测</span>
+                            </div>
+                        </div>
+                        <div class="demo-insight">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>周六商圈有活动，预计增收¥80，建议提前到岗</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 预测功能 -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">核心预测功能</h2>
+            <div class="features-row">
+                <div class="feature-box">
+                    <div class="feature-icon-lg"><i class="fas fa-chart-line"></i></div>
+                    <h3>收入趋势预测</h3>
+                    <p>提前3天预测收入变化，帮助您规划工作安排</p>
+                    <ul>
+                        <li>日收入预测</li>
+                        <li>周收入预测</li>
+                        <li>月收入预测</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon-lg"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>爆单区域推荐</h3>
+                    <p>实时分析商圈热度，推荐当前最优接单区域</p>
+                    <ul>
+                        <li>热力地图展示</li>
+                        <li>配送费加成提示</li>
+                        <li>距离优先排序</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon-lg"><i class="fas fa-clock"></i></div>
+                    <h3>黄金时段提醒</h3>
+                    <p>智能识别高收益时段，不错过任何赚钱机会</p>
+                    <ul>
+                        <li>高峰时段提醒</li>
+                        <li>最佳到岗时间</li>
+                        <li>休息时段建议</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用案例 -->
+    <section class="cases-section">
+        <div class="container">
+            <h2 class="section-title">真实使用案例</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-avatar">王</div>
+                    <div class="case-content">
+                        <h4>王师傅 - 外卖骑手</h4>
+                        <p>"APP告诉我周二下午商务区外卖单多，我提前去那边等单，当天多赚了80块！"</p>
+                        <div class="case-result">
+                            <span class="result-label">月收入提升</span>
+                            <span class="result-value">+¥1,200</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-avatar">李</div>
+                    <div class="case-content">
+                        <h4>李师傅 - 网约车司机</h4>
+                        <p>"预测说周末晚上酒吧代驾需求大，我切换代驾模式，一晚赚了600多！"</p>
+                        <div class="case-result">
+                            <span class="result-label">周末收入</span>
+                            <span class="result-value">¥650/晚</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>开始使用收入预测功能</h2>
+                <p>让AI帮你规划最优工作策略</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-white btn-large" id="btnInstall"><i class="fas fa-download"></i> 添加到桌面</button>
+                    <a href="contact.html" class="btn btn-outline-white btn-large">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><i class="fas fa-shield-alt"></i><span>接单无忧宝</span></a>
+                    <p>灵活工作者的"收入晴雨表"和"保障小管家"</p>
+                </div>
+                <div class="footer-links">
+                    <h4>产品功能</h4>
+                    <ul>
+                        <li><a href="income.html">收入预测</a></li>
+                        <li><a href="features.html">风险预警</a></li>
+                        <li><a href="insurance.html">保险保障</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="contact.html">联系我们</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 接单无忧宝. 三江学院法商学院创新训练项目</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI客服 -->
+    <div class="ai-chat-widget" id="aiChatWidget">
+        <div class="chat-button" id="chatButton"><i class="fas fa-robot"></i><span class="chat-badge">AI</span></div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                <div class="chat-info"><h4>AI智能助手</h4><span class="chat-status"><span class="status-dot"></span>在线</span></div>
+                <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="message-content"><p>您好！我是接单无忧宝的AI智能助手。有什么可以帮助您的吗？</p></div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div class="chat-input-wrapper">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="请输入您的问题...">
+                    <button class="chat-send" id="chatSend"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

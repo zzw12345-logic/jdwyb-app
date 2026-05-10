@@ -1,0 +1,15 @@
+{
+  "appId": "com.jdwyb.app",
+  "appName": "接单无忧宝",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#2563eb",
+      "showSpinner": false
+    }
+  }
+}

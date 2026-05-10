@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 接单无忧宝</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><i class="fas fa-shield-alt"></i><span>接单无忧宝</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="features.html">核心功能</a></li>
+                <li><a href="income.html">收入预测</a></li>
+                <li><a href="insurance.html">保险保障</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+            <div class="nav-buttons" id="navButtons">
+                <button class="btn btn-outline" id="btnLogin">登录</button>
+                <button class="btn btn-primary" id="btnRegister">免费注册</button>
+            </div>
+            <div class="nav-user" id="navUser" style="display:none;">
+                <div class="user-avatar" id="userAvatar"><i class="fas fa-user"></i></div>
+                <span class="user-name" id="userName"></span>
+                <button class="btn btn-outline btn-sm" id="btnLogout"><i class="fas fa-sign-out-alt"></i> 退出</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-tag">联系我们</span>
+            <h1>有问题？随时联系</h1>
+            <p>我们随时准备为您提供帮助和支持</p>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>联系方式</h2>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-text">
+                                <h4>电子邮箱</h4>
+                                <p>contact@jdwyb.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div class="contact-text">
+                                <h4>客服电话</h4>
+                                <p>400-888-9999</p>
+                                <span class="contact-note">工作时间：9:00-21:00</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fab fa-weixin"></i></div>
+                            <div class="contact-text">
+                                <h4>微信公众号</h4>
+                                <p>接单无忧宝</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-university"></i></div>
+                            <div class="contact-text">
+                                <h4>学校地址</h4>
+                                <p>江苏省南京市雨花台区龙西路310号</p>
+                                <span class="contact-note">三江学院法商学院</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <h2>在线留言</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName"><i class="fas fa-user"></i> 您的姓名</label>
+                                <input type="text" id="contactName" placeholder="请输入姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone"><i class="fas fa-phone"></i> 联系电话</label>
+                                <input type="tel" id="contactPhone" placeholder="请输入电话" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail"><i class="fas fa-envelope"></i> 电子邮箱</label>
+                            <input type="email" id="contactEmail" placeholder="请输入邮箱">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactType"><i class="fas fa-tag"></i> 咨询类型</label>
+                            <select id="contactType" required>
+                                <option value="">请选择咨询类型</option>
+                                <option value="产品咨询">产品咨询</option>
+                                <option value="保险理赔">保险理赔</option>
+                                <option value="技术支持">技术支持</option>
+                                <option value="合作洽谈">合作洽谈</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage"><i class="fas fa-comment"></i> 留言内容</label>
+                            <textarea id="contactMessage" rows="5" placeholder="请详细描述您的问题或建议..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large btn-block">
+                            <i class="fas fa-paper-plane"></i> 提交留言
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="quick-faq">
+        <div class="container">
+            <h2 class="section-title">常见问题</h2>
+            <div class="quick-faq-grid">
+                <div class="quick-faq-item">
+                    <i class="fas fa-question-circle"></i>
+                    <h4>如何注册账号？</h4>
+                    <p>点击右上角"免费注册"，填写手机号和基本信息即可完成注册。</p>
+                </div>
+                <div class="quick-faq-item">
+                    <i class="fas fa-question-circle"></i>
+                    <h4>保险如何收费？</h4>
+                    <p>按单计费，每单¥0.5起，接单自动激活，无需年付。</p>
+                </div>
+                <div class="quick-faq-item">
+                    <i class="fas fa-question-circle"></i>
+                    <h4>理赔需要多久？</h4>
+                    <p>材料齐全情况下，24小时内完成审核，审核通过立即打款。</p>
+                </div>
+                <div class="quick-faq-item">
+                    <i class="fas fa-question-circle"></i>
+                    <h4>支持哪些平台？</h4>
+                    <p>支持美团、饿了么、滴滴、代驾等主流平台的订单数据整合。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><i class="fas fa-shield-alt"></i><span>接单无忧宝</span></a>
+                    <p>灵活工作者的"收入晴雨表"和"保障小管家"</p>
+                </div>
+                <div class="footer-links">
+                    <h4>产品功能</h4>
+                    <ul>
+                        <li><a href="income.html">收入预测</a></li>
+                        <li><a href="features.html">风险预警</a></li>
+                        <li><a href="insurance.html">保险保障</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="contact.html">联系我们</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 接单无忧宝. 三江学院法商学院创新训练项目</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI客服 -->
+    <div class="ai-chat-widget" id="aiChatWidget">
+        <div class="chat-button" id="chatButton"><i class="fas fa-robot"></i><span class="chat-badge">AI</span></div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                <div class="chat-info"><h4>AI智能助手</h4><span class="chat-status"><span class="status-dot"></span>在线</span></div>
+                <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="message-content"><p>您好！我是接单无忧宝的AI智能助手。有什么可以帮助您的吗？</p></div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div class="chat-input-wrapper">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="请输入您的问题...">
+                    <button class="chat-send" id="chatSend"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 联系表单提交
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value;
+            const phone = document.getElementById('contactPhone').value;
+            const type = document.getElementById('contactType').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            // 保存留言到localStorage
+            const messages = JSON.parse(localStorage.getItem('jdwyb_messages') || '[]');
+            messages.push({
+                name, phone, type, message,
+                time: new Date().toISOString()
+            });
+            localStorage.setItem('jdwyb_messages', JSON.stringify(messages));
+            
+            // 显示成功提示
+            if (typeof showToast === 'function') {
+                showToast('留言提交成功！我们会尽快与您联系。', 'success');
+            } else {
+                alert('留言提交成功！我们会尽快与您联系。');
+            }
+            this.reset();
+        });
+    </script>
+</body>
+</html>

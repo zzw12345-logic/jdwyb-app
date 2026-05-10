@@ -1,0 +1,25 @@
+{
+  "name": "jdwyb-app",
+  "version": "1.0.0",
+  "description": "接单无忧宝 - 灵活工作者的收入晴雨表和保障小管家",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "cap:init": "npx cap init '接单无忧宝' com.jdwyb.app --web-dir .",
+    "cap:add": "npx cap add android",
+    "cap:sync": "npx cap sync",
+    "cap:open": "npx cap open android"
+  },
+  "keywords": [
+    "flexible-work",
+    "insurance",
+    "income-prediction"
+  ],
+  "author": "三江学院法商学院",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "^8.3.3",
+    "@capacitor/cli": "^8.3.3",
+    "@capacitor/core": "^8.3.3"
+  }
+}

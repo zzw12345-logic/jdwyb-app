@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>核心功能 - 接单无忧宝</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>接单无忧宝</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="features.html" class="active">核心功能</a></li>
+                <li><a href="income.html">收入预测</a></li>
+                <li><a href="insurance.html">保险保障</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+            <div class="nav-buttons" id="navButtons">
+                <button class="btn btn-outline" id="btnLogin">登录</button>
+                <button class="btn btn-primary" id="btnRegister">免费注册</button>
+            </div>
+            <div class="nav-user" id="navUser" style="display:none;">
+                <div class="user-avatar" id="userAvatar"><i class="fas fa-user"></i></div>
+                <span class="user-name" id="userName"></span>
+                <button class="btn btn-outline btn-sm" id="btnLogout"><i class="fas fa-sign-out-alt"></i> 退出</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-tag">核心功能</span>
+            <h1>三大核心功能，全方位守护</h1>
+            <p>从收入预测到风险保障，为灵活工作者提供一站式智能服务</p>
+        </div>
+    </section>
+
+    <!-- 功能详情 -->
+    <section class="feature-detail-section">
+        <div class="container">
+            <!-- 功能1：收入预测 -->
+            <div class="feature-detail-card">
+                <div class="feature-detail-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="feature-detail-content">
+                    <h2>自动算账 + 预测收入</h2>
+                    <p class="feature-subtitle">整合多平台数据，AI智能预测未来收益</p>
+                    
+                    <div class="feature-detail-body">
+                        <h3><i class="fas fa-check-circle"></i> 功能亮点</h3>
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <h4>多平台数据整合</h4>
+                                <p>自动同步美团、饿了么、滴滴等多平台订单数据，一站式管理所有收入来源，告别手动记账烦恼。</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>AI智能预测</h4>
+                                <p>基于机器学习算法，分析历史数据、天气、节假日等因素，预测准确率达78%，提前3天预知收入变化。</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>天气影响分析</h4>
+                                <p>实时监测天气变化，分析降雨、高温等对收入的影响，提前给出应对建议。</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>收入趋势图表</h4>
+                                <p>直观的日/周/月收入报表，清晰展示收入波动规律，帮助合理安排工作时间。</p>
+                            </div>
+                        </div>
+
+                        <h3><i class="fas fa-lightbulb"></i> 使用场景</h3>
+                        <div class="scenarios">
+                            <div class="scenario-item">
+                                <div class="scenario-icon"><i class="fas fa-sun"></i></div>
+                                <div class="scenario-text">
+                                    <h4>晴天预测</h4>
+                                    <p>"明天商圈有活动，预计外卖单量增加30%，建议提前到岗"</p>
+                                </div>
+                            </div>
+                            <div class="scenario-item">
+                                <div class="scenario-icon"><i class="fas fa-cloud-rain"></i></div>
+                                <div class="scenario-text">
+                                    <h4>雨天提醒</h4>
+                                    <p>"后天有暴雨，开启雨补模式，预计增收¥80"</p>
+                                </div>
+                            </div>
+                            <div class="scenario-item">
+                                <div class="scenario-icon"><i class="fas fa-calendar-alt"></i></div>
+                                <div class="scenario-text">
+                                    <h4>节假日预测</h4>
+                                    <p>"国庆期间代驾需求激增，建议切换代驾模式"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-cta">
+                        <a href="income.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-chart-line"></i> 查看收入预测详情
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 功能2：风险预警 -->
+            <div class="feature-detail-card featured">
+                <div class="feature-badge">热门功能</div>
+                <div class="feature-detail-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="feature-detail-content">
+                    <h2>风险预警提醒</h2>
+                    <p class="feature-subtitle">智能监控，把握每一个赚钱机会</p>
+                    
+                    <div class="feature-detail-body">
+                        <h3><i class="fas fa-check-circle"></i> 功能亮点</h3>
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <h4>收入异常预警</h4>
+                                <p>当收入明显低于预期时，立即推送预警，帮助及时调整策略。</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>爆单区域推荐</h4>
+                                <p>实时分析各商圈订单热度，推荐当前最优接单区域，提升接单效率。</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>黄金时段提醒</h4>
+                                <p>根据历史数据识别高收益时段，提前推送提醒，不错过赚钱机会。</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>平台政策解读</h4>
+                                <p>及时推送各平台政策变化，帮助了解最新规则，避免违规扣款。</p>
+                            </div>
+                        </div>
+
+                        <h3><i class="fas fa-bell"></i> 预警示例</h3>
+                        <div class="alert-examples">
+                            <div class="alert-item warning">
+                                <div class="alert-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div class="alert-content">
+                                    <h4>收入预警</h4>
+                                    <p>今日收入较昨日下降40%，建议检查是否错过高峰时段</p>
+                                </div>
+                            </div>
+                            <div class="alert-item success">
+                                <div class="alert-icon"><i class="fas fa-fire"></i></div>
+                                <div class="alert-content">
+                                    <h4>爆单提醒</h4>
+                                    <p>万达广场订单激增，当前配送费+3元，建议前往</p>
+                                </div>
+                            </div>
+                            <div class="alert-item info">
+                                <div class="alert-icon"><i class="fas fa-clock"></i></div>
+                                <div class="alert-content">
+                                    <h4>时段提醒</h4>
+                                    <p>下午5-7点为晚餐高峰，预计收入¥120，建议提前准备</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 功能3：按单保险 -->
+            <div class="feature-detail-card">
+                <div class="feature-detail-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="feature-detail-content">
+                    <h2>随用随买保险</h2>
+                    <p class="feature-subtitle">按单计费，接单自动激活保障</p>
+                    
+                    <div class="feature-detail-body">
+                        <h3><i class="fas fa-check-circle"></i> 功能亮点</h3>
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <h4>按单计费</h4>
+                                <p>每单仅需¥0.5起，用多少付多少，不像传统保险一次性年付上千元。</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>自动激活</h4>
+                                <p>接单即自动激活保险，无需手动操作，全程保障无遗漏。</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>快速理赔</h4>
+                                <p>24小时内完成理赔审核，审核通过立即打款，让保障真正落地。</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>误工补贴</h4>
+                                <p>因意外无法工作时，每天可领¥100-300误工补贴，保障基本生活。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-cta">
+                        <a href="insurance.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-shield-alt"></i> 查看保险详情
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>立即体验接单无忧宝</h2>
+                <p>让收入更稳定，让保障更贴心</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-white btn-large" id="btnInstall">
+                        <i class="fas fa-download"></i> 添加到桌面
+                    </button>
+                    <a href="contact.html" class="btn btn-outline-white btn-large">
+                        联系我们
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>接单无忧宝</span>
+                    </a>
+                    <p>灵活工作者的"收入晴雨表"和"保障小管家"</p>
+                </div>
+                <div class="footer-links">
+                    <h4>产品功能</h4>
+                    <ul>
+                        <li><a href="income.html">收入预测</a></li>
+                        <li><a href="features.html">风险预警</a></li>
+                        <li><a href="insurance.html">保险保障</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="contact.html">联系我们</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 接单无忧宝. 三江学院法商学院创新训练项目</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI客服 -->
+    <div class="ai-chat-widget" id="aiChatWidget">
+        <div class="chat-button" id="chatButton">
+            <i class="fas fa-robot"></i>
+            <span class="chat-badge">AI</span>
+        </div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                <div class="chat-info">
+                    <h4>AI智能助手</h4>
+                    <span class="chat-status"><span class="status-dot"></span>在线</span>
+                </div>
+                <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="message-content">
+                        <p>您好！我是接单无忧宝的AI智能助手。有什么可以帮助您的吗？</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div class="chat-input-wrapper">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="请输入您的问题...">
+                    <button class="chat-send" id="chatSend"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

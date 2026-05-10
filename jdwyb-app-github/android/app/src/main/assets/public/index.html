@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>接单无忧宝 - 灵活工作者的收入晴雨表和保障小管家</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- PWA配置 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="接单无忧宝">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect fill='%232563eb' width='192' height='192' rx='40'/%3E%3Ctext x='96' y='120' font-size='80' text-anchor='middle' fill='white'%3E📱%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>接单无忧宝</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="features.html">核心功能</a></li>
+                <li><a href="income.html">收入预测</a></li>
+                <li><a href="insurance.html">保险保障</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+            <div class="nav-buttons" id="navButtons">
+                <button class="btn btn-outline" id="btnLogin">登录</button>
+                <button class="btn btn-primary" id="btnRegister">免费注册</button>
+            </div>
+            <div class="nav-user" id="navUser" style="display:none;">
+                <div class="user-avatar" id="userAvatar"><i class="fas fa-user"></i></div>
+                <span class="user-name" id="userName"></span>
+                <button class="btn btn-outline btn-sm" id="btnLogout"><i class="fas fa-sign-out-alt"></i> 退出</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>专为灵活工作者设计</span>
+                </div>
+                <h1>灵活工作者的<br><span class="highlight">"收入晴雨表"</span>和<span class="highlight">"保障小管家"</span></h1>
+                <p class="hero-description">
+                    整合多平台订单，预测高收益时段和区域，自动激活按单计费保险。
+                    让外卖小哥、网约车司机告别收入波动，享受安心保障。
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">40%+</span>
+                        <span class="stat-label">日均单量提升</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2亿+</span>
+                        <span class="stat-label">服务灵活就业者</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">0.5元</span>
+                        <span class="stat-label">每单保险费用</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large" id="btnInstall">
+                        <i class="fas fa-download"></i>
+                        添加到桌面
+                    </button>
+                    <button class="btn btn-outline btn-large" id="btnDemo">
+                        <i class="fas fa-play-circle"></i>
+                        观看演示
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="app-interface">
+                            <div class="app-header">
+                                <span>接单无忧宝</span>
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="income-card">
+                                <div class="income-label">今日预计收入</div>
+                                <div class="income-amount">¥386</div>
+                                <div class="income-trend">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>比昨日 +23%</span>
+                                </div>
+                            </div>
+                            <div class="forecast-section">
+                                <div class="forecast-title">智能预测</div>
+                                <div class="forecast-item">
+                                    <i class="fas fa-sun"></i>
+                                    <span>下午2-4点 商圈爆单</span>
+                                </div>
+                                <div class="forecast-item">
+                                    <i class="fas fa-cloud-rain"></i>
+                                    <span>傍晚有雨 建议开雨补</span>
+                                </div>
+                            </div>
+                            <div class="insurance-status">
+                                <div class="status-icon active">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="status-text">
+                                    <div class="status-title">保险已激活</div>
+                                    <div class="status-desc">本单保障中 ¥0.5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-elements">
+                    <div class="float-card card-1">
+                        <i class="fas fa-chart-line"></i>
+                        <span>收入预测</span>
+                    </div>
+                    <div class="float-card card-2">
+                        <i class="fas fa-umbrella"></i>
+                        <span>意外保障</span>
+                    </div>
+                    <div class="float-card card-3">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>智能导航</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 核心功能 -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">核心功能</span>
+                <h2>三大核心功能，全方位守护</h2>
+                <p>从收入预测到风险保障，为灵活工作者提供一站式智能服务</p>
+            </div>
+            <div class="features-grid">
+                <a href="features.html#income-predict" class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>自动算账+预测收入</h3>
+                    <p>整合美团、滴滴等多平台数据，自动计算每日收入，结合天气、节假日预测未来收益趋势</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i>多平台数据整合</li>
+                        <li><i class="fas fa-check"></i>AI智能收入预测</li>
+                        <li><i class="fas fa-check"></i>天气影响分析</li>
+                    </ul>
+                </a>
+                <a href="features.html#risk-alert" class="feature-card featured">
+                    <div class="feature-badge">热门</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>风险预警提醒</h3>
+                    <p>收入异常立即报警，智能推荐最优接单区域和时段，助你把握每一个赚钱机会</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i>收入异常预警</li>
+                        <li><i class="fas fa-check"></i>爆单区域推荐</li>
+                        <li><i class="fas fa-check"></i>黄金时段提醒</li>
+                    </ul>
+                </a>
+                <a href="insurance.html" class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>随用随买保险</h3>
+                    <p>按单计费，接单自动激活保险。摔伤、撞车高赔偿，误工还能领日薪补贴</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i>按单计费 ¥0.5/单</li>
+                        <li><i class="fas fa-check"></i>自动激活保障</li>
+                        <li><i class="fas fa-check"></i>误工日薪补贴</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 收入预测展示 -->
+    <section id="income" class="income-section">
+        <div class="container">
+            <div class="income-grid">
+                <div class="income-content">
+                    <span class="section-tag">收入预测</span>
+                    <h2>智能预测，让收入更稳定</h2>
+                    <p class="section-desc">
+                        通过大数据分析，提前预测收入波动，帮助你合理安排工作时间，
+                        避免"吃了上顿愁下顿"的困境。
+                    </p>
+                    <div class="income-features">
+                        <div class="income-item">
+                            <div class="income-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="income-text">
+                                <h4>AI预测模型</h4>
+                                <p>准确率78%的收入预测，提前3天预知收益变化</p>
+                            </div>
+                        </div>
+                        <div class="income-item">
+                            <div class="income-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="income-text">
+                                <h4>爆单区域推荐</h4>
+                                <p>实时分析商圈热度，推荐高收益接单区域</p>
+                            </div>
+                        </div>
+                        <div class="income-item">
+                            <div class="income-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="income-text">
+                                <h4>黄金时段提醒</h4>
+                                <p>智能识别高收益时段，助你把握最佳接单时机</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="income-chart">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <span>本周收入预测</span>
+                            <div class="chart-legend">
+                                <span class="legend-item">
+                                    <span class="legend-dot actual"></span>
+                                    实际收入
+                                </span>
+                                <span class="legend-item">
+                                    <span class="legend-dot predicted"></span>
+                                    预测收入
+                                </span>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <div class="chart-bars">
+                                <div class="bar-group">
+                                    <div class="bar actual" style="height: 60%"></div>
+                                    <div class="bar predicted" style="height: 65%"></div>
+                                    <span class="bar-label">周一</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar actual" style="height: 75%"></div>
+                                    <div class="bar predicted" style="height: 70%"></div>
+                                    <span class="bar-label">周二</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar actual" style="height: 55%"></div>
+                                    <div class="bar predicted" style="height: 60%"></div>
+                                    <span class="bar-label">周三</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar actual" style="height: 80%"></div>
+                                    <div class="bar predicted" style="height: 75%"></div>
+                                    <span class="bar-label">周四</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar actual" style="height: 90%"></div>
+                                    <div class="bar predicted" style="height: 85%"></div>
+                                    <span class="bar-label">周五</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar predicted highlight" style="height: 95%"></div>
+                                    <span class="bar-label">周六</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar predicted" style="height: 70%"></div>
+                                    <span class="bar-label">周日</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-insight">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>预测：周六商圈有暴雨，建议开启雨天接单攻略，预计增收¥80</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 保险保障 -->
+    <section id="insurance" class="insurance-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">保险保障</span>
+                <h2>像外卖优惠券一样，随用随买</h2>
+                <p>打破传统年付保险模式，按单计费，让保障更灵活、更实惠</p>
+            </div>
+            <div class="insurance-grid">
+                <a href="insurance.html#basic" class="insurance-card basic">
+                    <div class="insurance-header">
+                        <h3>基础保障</h3>
+                        <div class="insurance-price">
+                            <span class="price">¥0.5</span>
+                            <span class="unit">/单</span>
+                        </div>
+                    </div>
+                    <ul class="insurance-features">
+                        <li><i class="fas fa-check"></i>意外伤害医疗 ¥5000</li>
+                        <li><i class="fas fa-check"></i>误工补贴 ¥100/天</li>
+                        <li><i class="fas fa-check"></i>24小时理赔服务</li>
+                        <li class="disabled"><i class="fas fa-times"></i>第三方责任险</li>
+                        <li class="disabled"><i class="fas fa-times"></i>车辆损失险</li>
+                    </ul>
+                    <button class="btn btn-outline btn-block">选择基础版</button>
+                </a>
+                <a href="insurance.html#premium" class="insurance-card premium featured">
+                    <div class="insurance-badge">推荐</div>
+                    <div class="insurance-header">
+                        <h3>全面保障</h3>
+                        <div class="insurance-price">
+                            <span class="price">¥1.0</span>
+                            <span class="unit">/单</span>
+                        </div>
+                    </div>
+                    <ul class="insurance-features">
+                        <li><i class="fas fa-check"></i>意外伤害医疗 ¥20000</li>
+                        <li><i class="fas fa-check"></i>误工补贴 ¥200/天</li>
+                        <li><i class="fas fa-check"></i>24小时理赔服务</li>
+                        <li><i class="fas fa-check"></i>第三方责任险 ¥50000</li>
+                        <li><i class="fas fa-check"></i>车辆损失险 ¥3000</li>
+                    </ul>
+                    <button class="btn btn-primary btn-block">选择全面版</button>
+                </a>
+                <a href="insurance.html#rainy" class="insurance-card enterprise">
+                    <div class="insurance-header">
+                        <h3>雨天加强</h3>
+                        <div class="insurance-price">
+                            <span class="price">¥1.5</span>
+                            <span class="unit">/单</span>
+                        </div>
+                    </div>
+                    <ul class="insurance-features">
+                        <li><i class="fas fa-check"></i>雨天意外医疗 ¥50000</li>
+                        <li><i class="fas fa-check"></i>误工补贴 ¥300/天</li>
+                        <li><i class="fas fa-check"></i>滑倒摔伤专项保障</li>
+                        <li><i class="fas fa-check"></i>第三方责任险 ¥100000</li>
+                        <li><i class="fas fa-check"></i>车辆损失险 ¥5000</li>
+                    </ul>
+                    <button class="btn btn-outline btn-block">选择雨天版</button>
+                </a>
+            </div>
+            <div class="insurance-process">
+                <h3>理赔流程</h3>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <h4>事故发生</h4>
+                        <p>遭遇意外立即在APP报案</p>
+                    </div>
+                    <div class="process-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>提交材料</h4>
+                        <p>上传医疗证明和事故照片</p>
+                    </div>
+                    <div class="process-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>快速审核</h4>
+                        <p>24小时内完成理赔审核</p>
+                    </div>
+                    <div class="process-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h4>赔款到账</h4>
+                        <p>审核通过立即打款</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价 -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">用户评价</span>
+                <h2>听听他们怎么说</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"以前买整年保险要花一千多，现在一个月下雨天就用四五次，总共才花20块，划算多了！"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">王</div>
+                        <div class="author-info">
+                            <h4>王师傅</h4>
+                            <span>外卖骑手 · 杭州</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"APP告诉我周二下午商务区外卖单多，周末晚上酒吧代驾需求大，简直像有个赚钱导航仪！"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">李</div>
+                        <div class="author-info">
+                            <h4>李师傅</h4>
+                            <span>网约车司机 · 北京</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"有次被追尾，还没来得及打电话，App已经弹出事故报告页面，三天后修车费就到账了。"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">张</div>
+                        <div class="author-info">
+                            <h4>张师傅</h4>
+                            <span>外卖骑手 · 上海</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-tag">关于我们</span>
+                    <h2>让灵活工作更有保障</h2>
+                    <p>
+                        接单无忧宝是专为外卖小哥、网约车司机等灵活工作者设计的智能工具。
+                        我们深知灵活就业者面临收入波动大、缺乏保障等痛点，致力于通过技术创新，
+                        为2亿+灵活就业者提供收入预测、风险预警和按单计费保险服务。
+                    </p>
+                    <p>
+                        项目由三江学院法商学院学生团队开发，在导师指导下，
+                        结合经济学、金融学理论，打造真正贴合灵活工作者需求的智能平台。
+                    </p>
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <span class="stat-value">2025</span>
+                            <span class="stat-label">项目启动</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-value">5人</span>
+                            <span class="stat-label">核心团队</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-value">校级</span>
+                            <span class="stat-label">项目级别</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="team-card">
+                        <div class="team-header">
+                            <i class="fas fa-users"></i>
+                            <span>项目团队</span>
+                        </div>
+                        <div class="team-list">
+                            <div class="team-member">
+                                <span class="member-name">左志伟</span>
+                                <span class="member-role">项目负责人</span>
+                            </div>
+                            <div class="team-member">
+                                <span class="member-name">王小宇</span>
+                                <span class="member-role">文献研究</span>
+                            </div>
+                            <div class="team-member">
+                                <span class="member-name">胡金万</span>
+                                <span class="member-role">项目介绍</span>
+                            </div>
+                            <div class="team-member">
+                                <span class="member-name">周杜</span>
+                                <span class="member-role">研究报告</span>
+                            </div>
+                            <div class="team-member">
+                                <span class="member-name">王状</span>
+                                <span class="member-role">模拟试验</span>
+                            </div>
+                        </div>
+                        <div class="team-advisors">
+                            <span class="advisors-label">指导教师</span>
+                            <span class="advisors-name">侯小丽、王翠娥</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA区域 -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>立即加入接单无忧宝</h2>
+                <p>让收入更稳定，让保障更贴心</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-white btn-large" id="btnInstallCta">
+                        <i class="fas fa-download"></i>
+                        添加到桌面
+                    </button>
+                    <button class="btn btn-outline-white btn-large" id="btnContact">
+                        联系我们
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>接单无忧宝</span>
+                    </div>
+                    <p>灵活工作者的"收入晴雨表"和"保障小管家"</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>产品功能</h4>
+                    <ul>
+                        <li><a href="income.html">收入预测</a></li>
+                        <li><a href="features.html">风险预警</a></li>
+                        <li><a href="insurance.html">保险保障</a></li>
+                        <li><a href="#">智能导航</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="insurance.html#claim">理赔流程</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="contact.html">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="about.html">项目介绍</a></li>
+                        <li><a href="about.html#team">团队成员</a></li>
+                        <li><a href="#">合作伙伴</a></li>
+                        <li><a href="contact.html">加入我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 接单无忧宝. 三江学院法商学院创新训练项目. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI客服悬浮窗 -->
+    <div class="ai-chat-widget" id="aiChatWidget">
+        <div class="chat-button" id="chatButton">
+            <i class="fas fa-robot"></i>
+            <span class="chat-badge">AI</span>
+        </div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="chat-info">
+                    <h4>AI智能助手</h4>
+                    <span class="chat-status">
+                        <span class="status-dot"></span>
+                        在线
+                    </span>
+                </div>
+                <button class="chat-close" id="chatClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>您好！我是接单无忧宝的AI智能助手，很高兴为您服务！😊</p>
+                        <p>我可以帮您：</p>
+                        <ul>
+                            <li>解答产品功能相关问题</li>
+                            <li>介绍保险保障方案</li>
+                            <li>说明收入预测原理</li>
+                            <li>协助理赔流程咨询</li>
+                        </ul>
+                        <p>请问有什么可以帮助您的吗？</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div class="chat-input-wrapper">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="请输入您的问题...">
+                    <button class="chat-send" id="chatSend">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="chat-quick-replies">
+                    <button class="quick-reply" data-question="什么是接单无忧宝？">什么是接单无忧宝？</button>
+                    <button class="quick-reply" data-question="保险怎么收费？">保险怎么收费？</button>
+                    <button class="quick-reply" data-question="如何理赔？">如何理赔？</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 登录弹窗 -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal">
+            <button class="modal-close" id="loginClose"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <i class="fas fa-shield-alt modal-logo"></i>
+                <h2>欢迎回来</h2>
+                <p>登录接单无忧宝，开启智能接单之旅</p>
+            </div>
+            <form id="loginForm" class="modal-form">
+                <div class="form-group">
+                    <label for="loginPhone"><i class="fas fa-mobile-alt"></i> 手机号</label>
+                    <input type="tel" id="loginPhone" placeholder="请输入手机号" maxlength="11" required>
+                    <span class="form-error" id="loginPhoneError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword"><i class="fas fa-lock"></i> 密码</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="loginPassword" placeholder="请输入密码" required>
+                        <button type="button" class="toggle-password" data-target="loginPassword"><i class="fas fa-eye"></i></button>
+                    </div>
+                    <span class="form-error" id="loginPasswordError"></span>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe"> 记住我
+                    </label>
+                    <a href="#" class="forgot-link">忘记密码？</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-large">
+                    <i class="fas fa-sign-in-alt"></i> 登录
+                </button>
+                <div class="modal-switch">
+                    还没有账号？<a href="#" id="switchToRegister">立即注册</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 注册弹窗 -->
+    <div class="modal-overlay" id="registerModal">
+        <div class="modal">
+            <button class="modal-close" id="registerClose"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <i class="fas fa-shield-alt modal-logo"></i>
+                <h2>创建账号</h2>
+                <p>注册接单无忧宝，让收入更有保障</p>
+            </div>
+            <form id="registerForm" class="modal-form">
+                <div class="form-group">
+                    <label for="regName"><i class="fas fa-user"></i> 昵称</label>
+                    <input type="text" id="regName" placeholder="请输入昵称" required>
+                    <span class="form-error" id="regNameError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="regPhone"><i class="fas fa-mobile-alt"></i> 手机号</label>
+                    <input type="tel" id="regPhone" placeholder="请输入手机号" maxlength="11" required>
+                    <span class="form-error" id="regPhoneError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="regRole"><i class="fas fa-briefcase"></i> 职业</label>
+                    <select id="regRole" required>
+                        <option value="">请选择您的职业</option>
+                        <option value="外卖骑手">外卖骑手</option>
+                        <option value="网约车司机">网约车司机</option>
+                        <option value="代驾司机">代驾司机</option>
+                        <option value="快递员">快递员</option>
+                        <option value="其他灵活工作者">其他灵活工作者</option>
+                    </select>
+                    <span class="form-error" id="regRoleError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword"><i class="fas fa-lock"></i> 密码</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="regPassword" placeholder="请设置密码（至少6位）" required>
+                        <button type="button" class="toggle-password" data-target="regPassword"><i class="fas fa-eye"></i></button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength">
+                        <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+                        <span class="strength-text" id="strengthText"></span>
+                    </div>
+                    <span class="form-error" id="regPasswordError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="regConfirm"><i class="fas fa-lock"></i> 确认密码</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="regConfirm" placeholder="请再次输入密码" required>
+                        <button type="button" class="toggle-password" data-target="regConfirm"><i class="fas fa-eye"></i></button>
+                    </div>
+                    <span class="form-error" id="regConfirmError"></span>
+                </div>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="agreeTerms" required>
+                    我已阅读并同意 <a href="#" class="terms-link">《用户协议》</a> 和 <a href="#" class="terms-link">《隐私政策》</a>
+                </label>
+                <button type="submit" class="btn btn-primary btn-block btn-large">
+                    <i class="fas fa-user-plus"></i> 注册
+                </button>
+                <div class="modal-switch">
+                    已有账号？<a href="#" id="switchToLogin">立即登录</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast提示 -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

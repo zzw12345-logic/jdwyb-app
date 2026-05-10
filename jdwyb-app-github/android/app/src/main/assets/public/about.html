@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 接单无忧宝</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><i class="fas fa-shield-alt"></i><span>接单无忧宝</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="features.html">核心功能</a></li>
+                <li><a href="income.html">收入预测</a></li>
+                <li><a href="insurance.html">保险保障</a></li>
+                <li><a href="about.html" class="active">关于我们</a></li>
+            </ul>
+            <div class="nav-buttons" id="navButtons">
+                <button class="btn btn-outline" id="btnLogin">登录</button>
+                <button class="btn btn-primary" id="btnRegister">免费注册</button>
+            </div>
+            <div class="nav-user" id="navUser" style="display:none;">
+                <div class="user-avatar" id="userAvatar"><i class="fas fa-user"></i></div>
+                <span class="user-name" id="userName"></span>
+                <button class="btn btn-outline btn-sm" id="btnLogout"><i class="fas fa-sign-out-alt"></i> 退出</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-tag">关于我们</span>
+            <h1>让灵活工作更有保障</h1>
+            <p>为2亿+灵活就业者提供收入预测、风险预警和按单计费保险服务</p>
+        </div>
+    </section>
+
+    <!-- 项目介绍 -->
+    <section class="about-intro">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>项目背景</h2>
+                    <p>随着平台经济的发展，我国灵活就业人员已超过2亿人。外卖骑手、网约车司机、代驾司机等灵活工作者面临着<strong>收入波动大、缺乏社会保障、职业风险高</strong>等问题。</p>
+                    <p>接单无忧宝应运而生，我们致力于通过技术创新，为灵活工作者提供：</p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> 收入预测工具，帮助合理安排工作时间</li>
+                        <li><i class="fas fa-check-circle"></i> 风险预警系统，把握每一个赚钱机会</li>
+                        <li><i class="fas fa-check-circle"></i> 按单计费保险，让保障更灵活更实惠</li>
+                    </ul>
+                </div>
+                <div class="about-stats-card">
+                    <div class="stat-row">
+                        <div class="stat-item-lg">
+                            <span class="stat-value">2亿+</span>
+                            <span class="stat-label">灵活就业者</span>
+                        </div>
+                        <div class="stat-item-lg">
+                            <span class="stat-value">78%</span>
+                            <span class="stat-label">预测准确率</span>
+                        </div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-item-lg">
+                            <span class="stat-value">¥0.5</span>
+                            <span class="stat-label">每单保险费</span>
+                        </div>
+                        <div class="stat-item-lg">
+                            <span class="stat-value">24h</span>
+                            <span class="stat-label">理赔审核</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">项目团队</h2>
+            <p class="section-subtitle">三江学院法商学院创新训练项目</p>
+            <div class="team-grid">
+                <div class="team-member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <h3>左志伟</h3>
+                    <span class="member-role">项目负责人</span>
+                    <p>负责项目整体规划、统筹协调、产品设计与推广策略制定</p>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <h3>王小宇</h3>
+                    <span class="member-role">文献研究</span>
+                    <p>负责国内外灵活就业相关文献调研、政策分析与数据收集</p>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <h3>胡金万</h3>
+                    <span class="member-role">项目介绍</span>
+                    <p>负责项目宣传材料撰写、路演展示与对外沟通协调</p>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <h3>周杜</h3>
+                    <span class="member-role">研究报告</span>
+                    <p>负责项目研究报告撰写、数据分析与结论总结</p>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <h3>王状</h3>
+                    <span class="member-role">模拟试验</span>
+                    <p>负责产品功能测试、用户体验调研与数据验证</p>
+                </div>
+            </div>
+            <div class="advisors-section">
+                <h3>指导教师</h3>
+                <div class="advisors-list">
+                    <div class="advisor-item">
+                        <span class="advisor-name">侯小丽</span>
+                        <span class="advisor-title">副教授</span>
+                    </div>
+                    <div class="advisor-item">
+                        <span class="advisor-name">王翠娥</span>
+                        <span class="advisor-title">讲师</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目信息 -->
+    <section class="project-info">
+        <div class="container">
+            <h2 class="section-title">项目信息</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>所属学校</h4>
+                    <p>三江学院</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-building"></i>
+                    <h4>所属院系</h4>
+                    <p>法商学院</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-award"></i>
+                    <h4>项目级别</h4>
+                    <p>校级创新训练项目</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4>启动时间</h4>
+                    <p>2025年</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>加入我们</h2>
+                <p>一起为灵活工作者创造更好的未来</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-white btn-large"><i class="fas fa-envelope"></i> 联系我们</a>
+                    <a href="index.html" class="btn btn-outline-white btn-large">返回首页</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><i class="fas fa-shield-alt"></i><span>接单无忧宝</span></a>
+                    <p>灵活工作者的"收入晴雨表"和"保障小管家"</p>
+                </div>
+                <div class="footer-links">
+                    <h4>产品功能</h4>
+                    <ul>
+                        <li><a href="income.html">收入预测</a></li>
+                        <li><a href="features.html">风险预警</a></li>
+                        <li><a href="insurance.html">保险保障</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="contact.html">联系我们</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 接单无忧宝. 三江学院法商学院创新训练项目</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI客服 -->
+    <div class="ai-chat-widget" id="aiChatWidget">
+        <div class="chat-button" id="chatButton"><i class="fas fa-robot"></i><span class="chat-badge">AI</span></div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                <div class="chat-info"><h4>AI智能助手</h4><span class="chat-status"><span class="status-dot"></span>在线</span></div>
+                <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="message-content"><p>您好！我是接单无忧宝的AI智能助手。有什么可以帮助您的吗？</p></div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div class="chat-input-wrapper">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="请输入您的问题...">
+                    <button class="chat-send" id="chatSend"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

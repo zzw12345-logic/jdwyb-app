@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保险保障 - 接单无忧宝</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><i class="fas fa-shield-alt"></i><span>接单无忧宝</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="features.html">核心功能</a></li>
+                <li><a href="income.html">收入预测</a></li>
+                <li><a href="insurance.html" class="active">保险保障</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+            <div class="nav-buttons" id="navButtons">
+                <button class="btn btn-outline" id="btnLogin">登录</button>
+                <button class="btn btn-primary" id="btnRegister">免费注册</button>
+            </div>
+            <div class="nav-user" id="navUser" style="display:none;">
+                <div class="user-avatar" id="userAvatar"><i class="fas fa-user"></i></div>
+                <span class="user-name" id="userName"></span>
+                <button class="btn btn-outline btn-sm" id="btnLogout"><i class="fas fa-sign-out-alt"></i> 退出</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-tag">保险保障</span>
+            <h1>像外卖优惠券一样，随用随买</h1>
+            <p>打破传统年付保险模式，按单计费，让保障更灵活、更实惠</p>
+        </div>
+    </section>
+
+    <!-- 保险方案 -->
+    <section class="insurance-plans">
+        <div class="container">
+            <h2 class="section-title">选择适合您的保障方案</h2>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>基础保障</h3>
+                        <div class="plan-price">
+                            <span class="price">¥0.5</span>
+                            <span class="unit">/单</span>
+                        </div>
+                        <p class="plan-desc">适合日常接单的基本保障</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> 意外伤害医疗 ¥5,000</li>
+                        <li><i class="fas fa-check"></i> 误工补贴 ¥100/天</li>
+                        <li><i class="fas fa-check"></i> 24小时理赔服务</li>
+                        <li><i class="fas fa-check"></i> 全国范围内有效</li>
+                        <li class="disabled"><i class="fas fa-times"></i> 第三方责任险</li>
+                        <li class="disabled"><i class="fas fa-times"></i> 车辆损失险</li>
+                    </ul>
+                    <button class="btn btn-outline btn-block plan-btn">选择基础版</button>
+                </div>
+
+                <div class="plan-card featured">
+                    <div class="plan-badge">推荐</div>
+                    <div class="plan-header">
+                        <h3>全面保障</h3>
+                        <div class="plan-price">
+                            <span class="price">¥1.0</span>
+                            <span class="unit">/单</span>
+                        </div>
+                        <p class="plan-desc">最受欢迎的保障方案</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> 意外伤害医疗 ¥20,000</li>
+                        <li><i class="fas fa-check"></i> 误工补贴 ¥200/天</li>
+                        <li><i class="fas fa-check"></i> 24小时理赔服务</li>
+                        <li><i class="fas fa-check"></i> 全国范围内有效</li>
+                        <li><i class="fas fa-check"></i> 第三方责任险 ¥50,000</li>
+                        <li><i class="fas fa-check"></i> 车辆损失险 ¥3,000</li>
+                    </ul>
+                    <button class="btn btn-primary btn-block plan-btn">选择全面版</button>
+                </div>
+
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>雨天加强</h3>
+                        <div class="plan-price">
+                            <span class="price">¥1.5</span>
+                            <span class="unit">/单</span>
+                        </div>
+                        <p class="plan-desc">恶劣天气专属保障</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> 雨天意外医疗 ¥50,000</li>
+                        <li><i class="fas fa-check"></i> 误工补贴 ¥300/天</li>
+                        <li><i class="fas fa-check"></i> 滑倒摔伤专项保障</li>
+                        <li><i class="fas fa-check"></i> 24小时理赔服务</li>
+                        <li><i class="fas fa-check"></i> 第三方责任险 ¥100,000</li>
+                        <li><i class="fas fa-check"></i> 车辆损失险 ¥5,000</li>
+                    </ul>
+                    <button class="btn btn-outline btn-block plan-btn">选择雨天版</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 理赔流程 -->
+    <section class="claim-process">
+        <div class="container">
+            <h2 class="section-title">理赔流程</h2>
+            <p class="section-subtitle">简单4步，快速获得赔偿</p>
+            <div class="process-timeline">
+                <div class="process-item">
+                    <div class="process-number">1</div>
+                    <div class="process-content">
+                        <h3><i class="fas fa-exclamation-circle"></i> 事故发生</h3>
+                        <p>遭遇意外后，立即在APP中点击"报案"按钮，系统自动记录时间和位置</p>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div class="process-number">2</div>
+                    <div class="process-content">
+                        <h3><i class="fas fa-file-alt"></i> 提交材料</h3>
+                        <p>上传医疗证明、事故照片、身份证明等材料，支持在线拍照上传</p>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div class="process-number">3</div>
+                    <div class="process-content">
+                        <h3><i class="fas fa-search"></i> 快速审核</h3>
+                        <p>专业理赔团队24小时内完成审核，材料齐全最快2小时出结果</p>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div class="process-number">4</div>
+                    <div class="process-content">
+                        <h3><i class="fas fa-money-bill-wave"></i> 赔款到账</h3>
+                        <p>审核通过后立即打款，支持微信、支付宝、银行卡多种方式</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">常见问题</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>保险什么时候生效？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>接单成功后保险立即生效，直到订单完成或取消。全程自动激活，无需手动操作。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>一天接多单怎么收费？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>按单计费，接一单扣一单的费用。例如选择¥1.0/单的方案，一天接10单就是¥10。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>什么情况可以理赔？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>包括但不限于：配送途中摔伤、交通事故受伤、被客户投诉导致的罚款、恶劣天气意外等。具体以保险条款为准。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>误工补贴怎么领取？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>因意外受伤无法工作时，提供医院证明后，每天可领取¥100-300误工补贴，最长可领30天。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>立即开启保障</h2>
+                <p>每单仅需¥0.5起，让工作更安心</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-white btn-large" id="btnInstall"><i class="fas fa-download"></i> 添加到桌面</button>
+                    <a href="contact.html" class="btn btn-outline-white btn-large">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><i class="fas fa-shield-alt"></i><span>接单无忧宝</span></a>
+                    <p>灵活工作者的"收入晴雨表"和"保障小管家"</p>
+                </div>
+                <div class="footer-links">
+                    <h4>产品功能</h4>
+                    <ul>
+                        <li><a href="income.html">收入预测</a></li>
+                        <li><a href="features.html">风险预警</a></li>
+                        <li><a href="insurance.html">保险保障</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="contact.html">联系我们</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 接单无忧宝. 三江学院法商学院创新训练项目</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI客服 -->
+    <div class="ai-chat-widget" id="aiChatWidget">
+        <div class="chat-button" id="chatButton"><i class="fas fa-robot"></i><span class="chat-badge">AI</span></div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                <div class="chat-info"><h4>AI智能助手</h4><span class="chat-status"><span class="status-dot"></span>在线</span></div>
+                <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="message-content"><p>您好！我是接单无忧宝的AI智能助手。有什么可以帮助您的吗？</p></div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div class="chat-input-wrapper">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="请输入您的问题...">
+                    <button class="chat-send" id="chatSend"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
